@@ -23,12 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+9kmn2i3dc-9nk!mr-dsbl1@q16l09gnj1pmk&*ir0j9oe@-*-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = DEBUG
-
-# Needed when DEBUG=False
-ALLOWED_HOSTS = ['superlists-staging.justin-masters.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
