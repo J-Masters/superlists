@@ -6,12 +6,13 @@ class List(models.Model):
     def get_absolute_url(self):
         return reverse('view_list', args=[self.id])
 
-    # this is to get rid of the pylint .objects warning
-    objects = models.Manager()
-
 class Item(models.Model):
     text = models.TextField(default='')
     list = models.ForeignKey(List, default=None)
 
-    # this is to get rid of the pylint .objects warning
-    objects = models.Manager()
+    class Meta:
+        ordering = ('id',)
+        unique_together = ('list', 'text')
+
+    def __str__(self):
+        return self.text
